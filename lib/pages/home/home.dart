@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bilibili/http/core/hi_net.dart';
 import 'package:flutter_bilibili/http/dao/login_dao.dart';
 import 'package:flutter_bilibili/http/request/notice_request.dart';
+import 'package:flutter_bilibili/route/index.dart';
 import 'package:get/get.dart';
 
 import '../../model/demo.dart';
@@ -24,9 +25,16 @@ class HomePage extends StatelessWidget {
             onPressed: () {
               // Get.toNamed('/detail/11111');
               // testLogin();
-              testNotice();
+              Get.toNamed(Routes.login);
+              // testNotice();
             },
             child: const Text('go Detail'),
+          ),
+          CupertinoButton(
+            onPressed: () {
+              Get.toNamed(Routes.registration);
+            },
+            child: const Text('go registration'),
           ),
           Obx(() => Text('${controller.count}')),
         ],
